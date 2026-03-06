@@ -18,9 +18,9 @@ echo "   User: $VPS_USER"
 echo "   Remote Path: $REMOTE_PATH"
 echo ""
 
-# Build binary for Linux
+# Build binary for Linux (no CGO needed with modernc.org/sqlite)
 echo "📦 Building binary for Linux..."
-CGO_ENABLED=1 GOOS=linux go build -a -installsuffix cgo -o bin/bot-wa-linux ./cmd/server
+CGO_ENABLED=0 GOOS=linux go build -o bin/bot-wa-linux ./cmd/server
 
 # Create remote directory
 echo "📁 Creating remote directory..."
