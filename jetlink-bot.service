@@ -1,0 +1,23 @@
+[Unit]
+Description=Jetlink WhatsApp Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/jetlink-wabot
+ExecStart=/root/jetlink-wabot/bot-wa
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=jetlink-bot
+
+# Environment variables (or use .env file)
+# Environment="FOONTE_TOKEN=your_token"
+# Environment="GROQ_API_KEY=your_api_key"
+# Environment="WEBHOOK_PORT=8080"
+# Environment="GROQ_MODEL=qwen/qwen3-32b"
+
+[Install]
+WantedBy=multi-user.target
