@@ -7,6 +7,7 @@
 *.test
 *.out
 bot-wa
+bin/
 
 # Test binary, built with `go test -c`
 *.test
